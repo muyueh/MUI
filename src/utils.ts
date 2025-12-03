@@ -16,8 +16,9 @@ export function toggleSidebar() {
   if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     const slideIn = window
       .getComputedStyle(document.documentElement)
-      .getPropertyValue('--SideNavigation-slideIn');
-    if (slideIn) {
+      .getPropertyValue('--SideNavigation-slideIn')
+      .trim();
+    if (slideIn === '1') {
       closeSidebar();
     } else {
       openSidebar();
@@ -43,8 +44,9 @@ export function toggleMessagesPane() {
   if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     const slideIn = window
       .getComputedStyle(document.documentElement)
-      .getPropertyValue('--MessagesPane-slideIn');
-    if (slideIn) {
+      .getPropertyValue('--MessagesPane-slideIn')
+      .trim();
+    if (slideIn === '1') {
       closeMessagesPane();
     } else {
       openMessagesPane();
