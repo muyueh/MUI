@@ -19,9 +19,11 @@
 
 ## GitHub Pages 部署提示
 - `vite.config.ts` 的 `base` 已設定為 `/MUI/`，適用於以此儲存庫名稱部署到 GitHub Pages (`https://<USERNAME>.github.io/MUI/`).
-- 已新增 `.github/workflows/deploy.yml`，當 `work` 分支有推送或手動觸發時會自動：
-  1. 執行 `npm ci && npm run build`
-  2. 上傳 `dist/` 為 Pages artifact 並發布到 GitHub Pages
+- 在本機確認頁面：執行 `npm install && npm run build` 後可用 `npm run preview` 檢視 `dist/`，畫面會與 Pages 相同。
+- `.github/workflows/deploy.yml` 會在 `work` 分支推送或手動觸發時自動：
+  1. 設定 Pages 環境
+  2. 執行 `npm ci && npm run build`
+  3. 上傳 `dist/` 為 Pages artifact 並發布到 GitHub Pages
 - 本專案不包含打包輸出或二進位資源，直接推送程式碼即可。
 
 ## 重要檔案
