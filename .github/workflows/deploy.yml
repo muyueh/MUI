@@ -2,7 +2,10 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ work ]
+    branches:
+      - work
+      - main
+      - 'codex/**'
   workflow_dispatch:
 
 permissions:
